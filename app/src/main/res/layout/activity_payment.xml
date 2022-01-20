@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".Payment">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="Night Stay:"
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="106dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="Cell Number: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="36dp"
+        android:text="Payment Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="35dp"
+        android:gravity="center"
+        android:text="Name: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/userName" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="209dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/userNightStay"
+        android:layout_width="209dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="@+id/userEmail"
+        app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/userCellNumber"
+        android:layout_width="193dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="Email: "
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <EditText
+        android:id="@+id/userEmail"
+        android:layout_width="209dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintTop_toTopOf="@+id/textView14" />
+</androidx.constraintlayout.widget.ConstraintLayout>
