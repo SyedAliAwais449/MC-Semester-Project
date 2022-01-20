@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="280dp">
+
+    <ImageView
+        android:id="@+id/roomImage"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image1" />
+
+    <TextView
+        android:id="@+id/roomNumber"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:gravity="center"
+        android:text="Room No: 201"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/roomImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/roomRating"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="8.8"
+        app:layout_constraintStart_toEndOf="@+id/roomImage"
+        app:layout_constraintTop_toBottomOf="@+id/roomNumber"
+        tools:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnRoomBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Book"
+        app:layout_constraintBottom_toBottomOf="@+id/roomImage"
+        app:layout_constraintEnd_toEndOf="@+id/roomInfo"
+        app:layout_constraintStart_toStartOf="@+id/roomInfo" />
+
+    <TextView
+        android:id="@+id/roomReviews"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:gravity="center"
+        android:text="322 Reviews"
+        app:layout_constraintBottom_toBottomOf="@+id/roomRating"
+        app:layout_constraintStart_toEndOf="@+id/roomRating"
+        app:layout_constraintTop_toTopOf="@+id/roomRating" />
+
+    <TextView
+        android:id="@+id/roomInfo"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Double Room with balcony"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/roomReviews"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/roomRating"
+        app:layout_constraintTop_toBottomOf="@+id/roomRating" />
+
+    <TextView
+        android:id="@+id/roomPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Price: PK-2999/-"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/roomInfo"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="@+id/roomInfo"
+        app:layout_constraintTop_toBottomOf="@+id/roomInfo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
