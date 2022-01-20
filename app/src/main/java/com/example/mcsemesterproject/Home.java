@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Home extends AppCompatActivity {
 
@@ -34,6 +38,12 @@ public class Home extends AppCompatActivity {
     public  void onPremiumRooms(View v){
         Intent intent= new Intent(Home.this, PremiumPackage.class);
         startActivity(intent);
+    }
+    public void addToDatabase(View v){
+        Order obj = new Order(2,"standard");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("members");
+        database.push().setValue(obj);
+        Toast.makeText(Home.this,"data inserted successfully", Toast.LENGTH_SHORT).show();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
