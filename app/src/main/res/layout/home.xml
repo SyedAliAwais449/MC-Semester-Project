@@ -103,13 +103,14 @@
                     android:text="A clean bed for a tired soul." />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/basic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="240dp"
                     android:layout_marginTop="345dp"
                     android:width="150dp"
                     android:backgroundTint="@color/buttonColor"
+                    android:onClick="onBasicRooms"
                     android:text="View All" />
 
             </androidx.cardview.widget.CardView>
@@ -150,13 +151,14 @@
                     android:text="Experience life face-to-face" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/standard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="240dp"
                     android:layout_marginTop="305dp"
                     android:width="150dp"
                     android:backgroundTint="@color/buttonColor"
+                    android:onClick="onStandardRooms"
                     android:text="View All" />
 
             </androidx.cardview.widget.CardView>
@@ -197,13 +199,14 @@
                     android:text="Always deliver more than expected" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/premium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="240dp"
                     android:layout_marginTop="330dp"
                     android:width="150dp"
                     android:backgroundTint="@color/buttonColor"
+                    android:onClick="onPremiumRooms"
                     android:text="View All" />
 
             </androidx.cardview.widget.CardView>

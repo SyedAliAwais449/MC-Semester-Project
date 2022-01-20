@@ -7,10 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class Home extends AppCompatActivity {
 
-    Toolbar toolbar;
+//    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,21 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.home);
 //        toolbar= findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+    }
+    public void onBasicRooms(View v){
+
+        Intent intent= new Intent(Home.this, BasicPackage.class);
+        startActivity(intent);
+    }
+
+    public  void onStandardRooms(View v){
+        Intent intent= new Intent(Home.this, StandardPackage.class);
+        startActivity(intent);
+    }
+
+    public  void onPremiumRooms(View v){
+        Intent intent= new Intent(Home.this, PremiumPackage.class);
+        startActivity(intent);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -32,7 +48,7 @@ public class Home extends AppCompatActivity {
 //                Intent intent= new Intent(MainActivity.this, MainActivity3.class);
 //                startActivity(intent);
                 break;
-            case R.id.stays:
+            case R.id.food:
 //                Intent intent2= new Intent(MainActivity.this, MainActivity2.class);
 //                startActivity(intent2);
                 break;
