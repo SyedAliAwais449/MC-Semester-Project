@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
+            android:name=".BasicPackage"
+            android:exported="false" />
+        <activity
+            android:name=".PremiumPackage"
+            android:exported="false" />
+        <activity
+            android:name=".StandardPackage"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="true">
             <intent-filter>
