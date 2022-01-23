@@ -32,9 +32,9 @@ public class StandardPackage extends AppCompatActivity {
         int id2 = getResources().getIdentifier("image2", "drawable", getPackageName());
         int id3 = getResources().getIdentifier("image3", "drawable", getPackageName());
 
-        Room f0 = new Room("Room Number: 201", 8.2, "223 Reviews", "Double Room with Balcony", "Price: PK-2900/-", id1);
-        Room f1 = new Room("Room Number: 202", 8.9, "145 Reviews", "Single Room with Balcony", "Price: PK-1900/-", id2);
-        Room f2 = new Room("Room Number: 203", 8.5, "250 Reviews", "Tripple Room with Balcony", "Price: PK-4900/-", id3);
+        Room f0 = new Room("201", "8.2", "223 Reviews", "Double Room with Balcony", "Price: PK-2900/-", id1, false);
+        Room f1 = new Room("202", "8.9", "145 Reviews", "Single Room with Balcony", "Price: PK-1900/-", id2, false);
+        Room f2 = new Room("203", "8.5", "250 Reviews", "Tripple Room with Balcony", "Price: PK-4900/-", id3, false);
 
         roomsList.addAll(Arrays.asList(new Room[]{f0, f1, f2}));
         recyclerView = findViewById(R.id.recyclerView);

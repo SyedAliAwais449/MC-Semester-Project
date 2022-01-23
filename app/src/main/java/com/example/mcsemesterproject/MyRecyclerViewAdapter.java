@@ -1,10 +1,11 @@
 package com.example.mcsemesterproject;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +40,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.roomInfo.setText(holder.data.getRoomInfo());
         holder.roomPrice.setText(holder.data.getRoomPrice());
         holder.roomImage.setImageResource(holder.data.getRoomImageName());
+        holder.roomNumberString.setText("Room : ");
 
     }
 
@@ -51,11 +53,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         ImageView roomImage;
         TextView roomNumber;
+        TextView roomNumberString;
         TextView roomRating;
         TextView roomReviews;
         TextView roomInfo;
         TextView roomPrice;
         Room data;
+        Button btn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,7 +69,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             roomReviews = itemView.findViewById(R.id.roomReviews);
             roomInfo = itemView.findViewById(R.id.roomInfo);
             roomPrice = itemView.findViewById(R.id.roomPrice);
+            roomNumberString=itemView.findViewById(R.id.roomNumber23);
+            btn= itemView.findViewById(R.id.btnRoomBook);
         }
+
+//        public void paymentDetails(){
+//            Intent intent= new Intent(MainActivity.this, MainActivity3.class);
+//            startActivity(intent);
+//        }
     }
 
 }

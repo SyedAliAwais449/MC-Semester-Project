@@ -32,9 +32,9 @@ public class PremiumPackage extends AppCompatActivity {
         int id2 = getResources().getIdentifier("image32", "drawable", getPackageName());
         int id3 = getResources().getIdentifier("image33", "drawable", getPackageName());
 
-        Room f0 = new Room("Room Number: 301", 9.8, "449 Reviews", "Double Room with Terrace", "Price: PK-5900/-", id1);
-        Room f1 = new Room("Room Number: 302", 9.5, "458 Reviews", "Single Room with Terrace", "Price: PK-4900/-", id2);
-        Room f2 = new Room("Room Number: 303", 9.9, "462 Reviews", "Tripple Room with Terrace", "Price: PK-6900/-", id3);
+        Room f0 = new Room("301", "9.8", "449 Reviews", "Double Room with Terrace", "Price: PK-5900/-", id1, false);
+        Room f1 = new Room("302", "9.5", "458 Reviews", "Single Room with Terrace", "Price: PK-4900/-", id2, false);
+        Room f2 = new Room("303", "9.9", "462 Reviews", "Tripple Room with Terrace", "Price: PK-6900/-", id3, false);
 
         roomsList.addAll(Arrays.asList(new Room[]{f0, f1, f2}));
         recyclerView = findViewById(R.id.recyclerView2);
