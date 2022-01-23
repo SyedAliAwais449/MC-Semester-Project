@@ -80,9 +80,6 @@ public class BasicPackage extends AppCompatActivity {
                     roomsList.add(room);
                 }
                 setAdapterFunction();
-//                Log.d("T1", dataSnapshot);
-//                Map<String, Object> MyValue = (HashMap<String, Object>) dataSnapshot.getValue();
-//                MyValue.keySet();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
