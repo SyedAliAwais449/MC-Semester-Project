@@ -2,12 +2,16 @@ package com.example.mcsemesterproject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,10 +21,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     List<Room> roomList;
     Activity mAct;
+    Context context;
 
-    public MyRecyclerViewAdapter(List<Room> roomList, Activity mAct) {
+    public MyRecyclerViewAdapter(List<Room> roomList, Activity mAct, Context context) {
         this.roomList = roomList;
         this.mAct = mAct;
+        this.context = context;
     }
     @NonNull
     @Override
@@ -40,6 +46,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.roomPrice.setText(holder.data.getRoomPrice());
         holder.roomImage.setImageResource(holder.data.getRoomImageName());
 
+        holder.btnBookRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Payment.class);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -56,6 +70,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         TextView roomInfo;
         TextView roomPrice;
         Room data;
+        Button btnBookRoom;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +80,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             roomReviews = itemView.findViewById(R.id.roomReviews);
             roomInfo = itemView.findViewById(R.id.roomInfo);
             roomPrice = itemView.findViewById(R.id.roomPrice);
+            btnBookRoom = itemView.findViewById(R.id.btnRoomBook);
         }
     }
 

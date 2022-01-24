@@ -45,7 +45,7 @@ public class StandardPackage extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MyRecyclerViewAdapter(roomsList, StandardPackage.this) {
+        adapter = new MyRecyclerViewAdapter(roomsList, StandardPackage.this, StandardPackage.this) {
 
         };
         recyclerView.setAdapter(adapter);
