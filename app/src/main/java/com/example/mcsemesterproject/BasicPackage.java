@@ -1,14 +1,26 @@
 package com.example.mcsemesterproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class BasicPackage extends AppCompatActivity {
 
@@ -28,15 +40,57 @@ public class BasicPackage extends AppCompatActivity {
 
     private void setListAdapter() {
 
-        int id1 = getResources().getIdentifier("image11", "drawable", getPackageName());
-        int id2 = getResources().getIdentifier("image12", "drawable", getPackageName());
-        int id3 = getResources().getIdentifier("image13", "drawable", getPackageName());
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("basicRooms");
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String roomKey;
+                String roomInfo;
+                String roomNumber;
+                String roomRating;
+                String roomReviews;
+                String roomPrice;
+                int roomImageName;
+                boolean book;
+                String temp;
+                for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+                    Room room= new Room();
+                    roomKey = childSnapshot.getKey();
+                    roomInfo= dataSnapshot.child(roomKey).child("roomInfo").getValue().toString();
+                    roomNumber= dataSnapshot.child(roomKey).child("roomNumber").getValue().toString();
+                    roomRating= dataSnapshot.child(roomKey).child("roomRating").getValue().toString();
+                    roomReviews= dataSnapshot.child(roomKey).child("roomReviews").getValue().toString();
+                    roomPrice= dataSnapshot.child(roomKey).child("roomPrice").getValue().toString();
+                    roomImageName= Integer.parseInt(dataSnapshot.child(roomKey).child("roomImageName").getValue().toString());
+                    temp= dataSnapshot.child(roomKey).child("book").getValue().toString();
+                    Log.d("T8", roomInfo);
+                    if(temp.equals("false")){
+                        book= false;
+                    }
+                    else{
+                        book=true;
+                    }
+                    if(!book) {
+                        room.setRoomNumber(roomNumber);
+                        room.setRoomRating(roomRating);
+                        room.setRoomReviews(roomReviews);
+                        room.setRoomInfo(roomInfo);
+                        room.setRoomPrice(roomPrice);
+                        room.setRoomImageName(roomImageName);
+                        room.setBook(book);
+                        roomsList.add(room);
+                    }
+                }
+                setAdapterFunction();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        Room f0 = new Room("Room Number: 101", 9.0, "149 Reviews", "Double Room without Terrace", "Price: PK-3900/-", id1);
-        Room f1 = new Room("Room Number: 102", 9.2, "258 Reviews", "Single Room without Terrace", "Price: PK-1900/-", id2);
-        Room f2 = new Room("Room Number: 103", 8.9, "162 Reviews", "Tripple Room without Terrace", "Price: PK-5900/-", id3);
+            }
+        });
+    }
 
-        roomsList.addAll(Arrays.asList(new Room[]{f0, f1, f2}));
+    public void setAdapterFunction(){
         recyclerView = findViewById(R.id.recyclerView3);
 
         //recyclerView.setHasFixedSize(true);
@@ -45,9 +99,7 @@ public class BasicPackage extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MyRecyclerViewAdapter(roomsList, BasicPackage.this) {
-
-        };
+        adapter = new MyRecyclerViewAdapter(roomsList, BasicPackage.this);
         recyclerView.setAdapter(adapter);
     }
 }
