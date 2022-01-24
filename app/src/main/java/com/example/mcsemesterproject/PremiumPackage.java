@@ -93,7 +93,7 @@ public class PremiumPackage extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MyRecyclerViewAdapter(roomsList, PremiumPackage.this);
+        adapter = new MyRecyclerViewAdapter(roomsList, PremiumPackage.this, this);
         recyclerView.setAdapter(adapter);
     }
 }

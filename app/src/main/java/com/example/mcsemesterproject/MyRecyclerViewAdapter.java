@@ -1,6 +1,7 @@
 package com.example.mcsemesterproject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +19,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     List<Room> roomList;
     Activity mAct;
+    Context context;
 
-    public MyRecyclerViewAdapter(List<Room> roomList, Activity mAct) {
+    public MyRecyclerViewAdapter(List<Room> roomList, Activity mAct, Context context) {
         this.roomList = roomList;
         this.mAct = mAct;
+        this.context = context;
     }
     @NonNull
     @Override
@@ -42,6 +45,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.roomImage.setImageResource(holder.data.getRoomImageName());
         holder.roomNumberString.setText("Room : ");
 
+        holder.btnRoomBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Payment.class);
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -59,7 +70,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         TextView roomInfo;
         TextView roomPrice;
         Room data;
-        Button btn;
+        Button btnRoomBook;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,7 +81,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             roomInfo = itemView.findViewById(R.id.roomInfo);
             roomPrice = itemView.findViewById(R.id.roomPrice);
             roomNumberString=itemView.findViewById(R.id.roomNumber23);
-            btn= itemView.findViewById(R.id.btnRoomBook);
+            btnRoomBook = itemView.findViewById(R.id.btnRoomBook);
         }
 
 //        public void paymentDetails(){
