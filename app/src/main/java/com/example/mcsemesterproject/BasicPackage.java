@@ -27,6 +27,7 @@ public class BasicPackage extends AppCompatActivity {
     }
 
     private void setListAdapter() {
+
         int id1 = getResources().getIdentifier("image11", "drawable", getPackageName());
         int id2 = getResources().getIdentifier("image12", "drawable", getPackageName());
         int id3 = getResources().getIdentifier("image13", "drawable", getPackageName());
@@ -44,10 +45,9 @@ public class BasicPackage extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MyRecyclerViewAdapter(roomsList, BasicPackage.this, this) {
+        adapter = new MyRecyclerViewAdapter(roomsList, BasicPackage.this) {
 
         };
         recyclerView.setAdapter(adapter);
-
     }
 }
