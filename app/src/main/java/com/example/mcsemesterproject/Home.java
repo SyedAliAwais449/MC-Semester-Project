@@ -84,8 +84,8 @@ public class Home extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.about:
-//                Intent intent= new Intent(MainActivity.this, MainActivity3.class);
-//                startActivity(intent);
+                Intent intent= new Intent(Home.this, About.class);
+                startActivity(intent);
                 break;
             case R.id.food:
 //                Intent intent2= new Intent(MainActivity.this, MainActivity2.class);
