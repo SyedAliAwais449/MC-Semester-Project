@@ -99,7 +99,7 @@ public class BasicPackage extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MyRecyclerViewAdapter(roomsList, BasicPackage.this);
+        adapter = new MyRecyclerViewAdapter(roomsList, BasicPackage.this, this);
         recyclerView.setAdapter(adapter);
     }
 }
