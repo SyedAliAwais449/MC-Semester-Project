@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
-            android:name=".Home"
-            android:exported="false" />
-        <activity
             android:name=".BasicPackage"
             android:exported="false" />
         <activity
@@ -22,7 +19,7 @@
             android:name=".StandardPackage"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
