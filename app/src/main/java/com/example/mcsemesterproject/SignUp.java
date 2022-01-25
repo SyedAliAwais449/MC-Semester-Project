@@ -41,7 +41,7 @@ public class SignUp extends AppCompatActivity {
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PerforAuth();
+                //PerforAuth();
             }
         });
     }
@@ -68,12 +68,12 @@ public class SignUp extends AppCompatActivity {
                     {
                         progressDialog.dismiss();
                         sendUserToNexrActivity();
-                        Toast.makeText(SignUp.this, "Registration Successfull",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUp.this, "Registration Successfull",Toast.LENGTH_SHORT);
                     }
                     else
                     {
                         progressDialog.dismiss();
-                        Toast.makeText(SignUp.this, ""+task.getException(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUp.this, ""+task.getException(),Toast.LENGTH_SHORT);
 
                     }
 
@@ -83,6 +83,6 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void sendUserToNexrActivity() {
-        Toast.makeText(SignUp.this, "Registration Successfull send this to next activitys",Toast.LENGTH_SHORT).show();
+        Toast.makeText(SignUp.this, "Registration Successfull send this to next activitys",Toast.LENGTH_SHORT);
     }
 }
