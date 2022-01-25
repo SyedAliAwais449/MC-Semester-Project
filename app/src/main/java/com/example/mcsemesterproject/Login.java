@@ -101,5 +101,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
+        Intent intente= new Intent(this,Home.class);
+        startActivity(intente);
     }
 }
