@@ -44,9 +44,29 @@ public class Payment extends AppCompatActivity {
         emailField= email.getText().toString();
         cellNumberField= cellNumber.getText().toString();
         nightStayField= nightStay.getText().toString();
-        settime
-        Toast.makeText(Payment.this,"Room "+roomNumber+" has been Booked for you", Toast.LENGTH_SHORT).show();
-        BookedRoomInfo obj= new BookedRoomInfo(nameField,emailField,cellNumberField,nightStayField,roomNumber);
-        database.push().setValue(obj);
+
+        if(!name.getText().toString().equals("") && !email.getText().toString().equals("") &&
+                !cellNumber.getText().toString().equals("") && !nightStay.getText().toString().equals("")){
+            Toast.makeText(Payment.this,"Room "+roomNumber+" has been Booked for you", Toast.LENGTH_SHORT).show();
+            BookedRoomInfo obj= new BookedRoomInfo(nameField,emailField,cellNumberField,nightStayField,roomNumber);
+            database.push().setValue(obj);
+        }
+
+        if(name.getText().toString().equals("") && email.getText().toString().equals("") &&
+                cellNumber.getText().toString().equals("") && nightStay.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "All fields are empty. Please Enter data in all fields", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            if (name.getText().toString().equals(""))
+                Toast.makeText(getApplicationContext(), "Please Enter Your Name in Name field", Toast.LENGTH_SHORT).show();
+            if (email.getText().toString().equals(""))
+                Toast.makeText(getApplicationContext(), "Please Enter Your Email in Email field", Toast.LENGTH_SHORT).show();
+            if (cellNumber.getText().toString().equals(""))
+                Toast.makeText(getApplicationContext(), "Please Enter Your Cell Number in Cell Number field", Toast.LENGTH_SHORT).show();
+            if (nightStay.getText().toString().equals(""))
+                Toast.makeText(getApplicationContext(), "Please Enter Night Stays in NightStay field", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 }
