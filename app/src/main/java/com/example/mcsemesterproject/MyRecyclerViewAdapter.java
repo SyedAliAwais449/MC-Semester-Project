@@ -49,6 +49,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Payment.class);
+                intent.putExtra("roomNumber", holder.data.getRoomNumber());
                 context.startActivity(intent);
 
             }

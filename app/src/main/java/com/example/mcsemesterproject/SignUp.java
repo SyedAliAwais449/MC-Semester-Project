@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
@@ -66,6 +68,8 @@ public class SignUp extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
+                        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("Users");
+                        database.push().setValue(emial);
                         progressDialog.dismiss();
                         sendUserToNexrActivity();
                         Toast.makeText(SignUp.this, "Registration Successfull",Toast.LENGTH_SHORT).show();
@@ -76,7 +80,6 @@ public class SignUp extends AppCompatActivity {
                         Toast.makeText(SignUp.this, ""+task.getException(),Toast.LENGTH_SHORT).show();
 
                     }
-
                 }
             });
         }

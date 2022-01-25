@@ -64,8 +64,9 @@ public class Home extends AppCompatActivity {
 //        HashMap hashMap= new HashMap();
 //        hashMap.put("roomId","24324");
 //        database.child("Room201").updateChildren(hashMap);
+
 //        int id1 = getResources().getIdentifier("image31", "drawable", getPackageName());
-//        int id2 = getResources().getIdentifier("image32", "drawable", getPackageName());
+//        int id2 = getResources().getIdentifier("image32", "drawable", getPackageNam   e());
 //        int id3 = getResources().getIdentifier("image33", "drawable", getPackageName());
 //
 //        Room f0 = new Room("301", 9.8, "449 Reviews", "Double Room with Terrace", "Price: PK-5900/-", id1, false);
