@@ -16,7 +16,6 @@ public class Login extends AppCompatActivity {
         btn=findViewById(R.id.signup);
         btn.setOnClickListener(new View.OnClickListener() {
             Intent inte;
-            //findind error
             @Override
 
             public void onClick(View v) {
