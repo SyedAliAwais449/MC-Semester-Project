@@ -83,6 +83,8 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void sendUserToNexrActivity() {
-        Toast.makeText(SignUp.this, "Registration Successfull send this to next activitys",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(SignUp.this, "Registration Successfull send this to next activitys",Toast.LENGTH_SHORT).show();
+    Intent intente=new Intent(this,Login.class);
+    startActivity(intente);
     }
 }
