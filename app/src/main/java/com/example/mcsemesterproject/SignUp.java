@@ -17,10 +17,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Login extends AppCompatActivity {
-    Button btn;
-    EditText inputemail, inputpassword;
-    Button loginbutton;
+public class SignUp extends AppCompatActivity {
+
+    EditText inputemail, inputpassword, confirmpass;
+    Button registerbutton;
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
@@ -29,77 +29,60 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        btn = findViewById(R.id.signup);
-
-        inputemail = findViewById(R.id.email);
-        inputpassword = findViewById(R.id.password);
-        loginbutton = findViewById(R.id.login);
+        setContentView(R.layout.activity_sign_up);
+        inputemail = findViewById(R.id.emaile);
+        inputpassword = findViewById(R.id.passworde);
+        confirmpass = findViewById(R.id.confirmpassword);
+        registerbutton = findViewById(R.id.register);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            Intent inte;
-
-            //findind error
-            @Override
-
-            public void onClick(View v) {
-                inte = new Intent(Login.this, SignUp.class);
-                startActivity(inte);
-            }
-        });
-        loginbutton.setOnClickListener(new View.OnClickListener() {
+        Intent inte = getIntent();
+        registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                performLogin();
+                PerforAuth();
             }
         });
     }
 
-
-    private void performLogin() {
+    private void PerforAuth() {
         String emial = inputemail.getText().toString();
         String pass = inputpassword.getText().toString();
-        //String conf = confirmpass.getText().toString();
+        String conf = confirmpass.getText().toString();
         if (emial.matches(emailPattern)) {
             inputemail.setError("enter connext Email");
         } else if (pass.isEmpty()) {
             inputpassword.setError("enter proper password");
-        } /*else if (!pass.equals(conf)) {
+        } else if (!pass.equals(conf)) {
             confirmpass.setError("Password not matched");
-        } */else {
-            progressDialog.setMessage("Please wait while login");
-            progressDialog.setTitle("Login");
+        } else {
+            progressDialog.setMessage("Please wait while registration");
+            progressDialog.setTitle("Registration");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
-            mAuth.signInWithEmailAndPassword(emial,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(emial,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
                         progressDialog.dismiss();
-                        sendUserToNextActivity();
-                        Toast.makeText(Login.this, "Login Successfull",Toast.LENGTH_SHORT).show();
-
+                        sendUserToNexrActivity();
+                        Toast.makeText(SignUp.this, "Registration Successfull",Toast.LENGTH_SHORT).show();
                     }
                     else
                     {
                         progressDialog.dismiss();
-                        Toast.makeText(Login.this, ""+task.getException(),Toast.LENGTH_SHORT).show();
-
-
+                        Toast.makeText(SignUp.this, ""+task.getException(),Toast.LENGTH_SHORT).show();
 
                     }
 
-
                 }
-            })      ;
-
+            });
         }
     }
 
-    private void sendUserToNextActivity() {
+    private void sendUserToNexrActivity() {
+        Toast.makeText(SignUp.this, "Registration Successfull send this to next activitys",Toast.LENGTH_SHORT).show();
     }
 }
