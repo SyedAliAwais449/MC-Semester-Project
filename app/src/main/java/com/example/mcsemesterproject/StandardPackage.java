@@ -66,14 +66,16 @@ public class StandardPackage extends AppCompatActivity {
                     else{
                         book=true;
                     }
-                    room.setRoomNumber(roomNumber);
-                    room.setRoomRating(roomRating);
-                    room.setRoomReviews(roomReviews);
-                    room.setRoomInfo(roomInfo);
-                    room.setRoomPrice(roomPrice);
-                    room.setRoomImageName(roomImageName);
-                    room.setBook(book);
-                    roomsList.add(room);
+                    if(!book) {
+                        room.setRoomNumber(roomNumber);
+                        room.setRoomRating(roomRating);
+                        room.setRoomReviews(roomReviews);
+                        room.setRoomInfo(roomInfo);
+                        room.setRoomPrice(roomPrice);
+                        room.setRoomImageName(roomImageName);
+                        room.setBook(book);
+                        roomsList.add(room);
+                    }
                 }
                 setAdapterFunction();
             }
