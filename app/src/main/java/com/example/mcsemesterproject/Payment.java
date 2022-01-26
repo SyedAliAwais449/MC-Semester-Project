@@ -87,6 +87,7 @@ public class Payment extends AppCompatActivity {
                         if(roomNumber2.equals(roomNumber)){
                             HashMap hashMap= new HashMap();
                             hashMap.put("book",true);
+                            hashMap.put("vacant",false);
                             database2.child(roomKey).updateChildren(hashMap);
                         }
                     }

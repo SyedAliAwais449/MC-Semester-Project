@@ -48,6 +48,7 @@ public class StandardPackage extends AppCompatActivity {
                 String roomPrice;
                 int roomImageName;
                 boolean book;
+                boolean vacant;
                 String temp;
                 for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
                     Room room= new Room();
@@ -62,9 +63,11 @@ public class StandardPackage extends AppCompatActivity {
                     Log.d("T8", roomInfo);
                     if(temp.equals("false")){
                         book= false;
+                        vacant= true;
                     }
                     else{
                         book=true;
+                        vacant=false;
                     }
                     if(!book) {
                         room.setRoomNumber(roomNumber);
@@ -74,6 +77,7 @@ public class StandardPackage extends AppCompatActivity {
                         room.setRoomPrice(roomPrice);
                         room.setRoomImageName(roomImageName);
                         room.setBook(book);
+                        room.setVacant(vacant);
                         roomsList.add(room);
                     }
                 }

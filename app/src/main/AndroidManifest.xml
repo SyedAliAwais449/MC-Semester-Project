@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
-            android:name=".AdminPanel"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".SignUp"
@@ -39,7 +39,7 @@
             android:name=".StandardPackage"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".AdminPanel"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

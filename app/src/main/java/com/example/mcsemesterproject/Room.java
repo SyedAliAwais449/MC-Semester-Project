@@ -8,8 +8,9 @@ public class Room {
     private String roomPrice;
     private int roomImageName;
     private boolean book;
+    private boolean vacant;
 
-    public Room(String roomNumber, String roomRating, String roomReviews, String roomInfo, String roomPrice, int roomImageName, boolean book) {
+    public Room(String roomNumber, String roomRating, String roomReviews, String roomInfo, String roomPrice, int roomImageName, boolean book, boolean vacant) {
         this.roomNumber = roomNumber;
         this.roomRating = roomRating;
         this.roomReviews = roomReviews;
@@ -17,10 +18,15 @@ public class Room {
         this.roomPrice = roomPrice;
         this.roomImageName = roomImageName;
         this.book= book;
+        this.vacant=vacant;
     }
     public  Room(){
 
     }
+
+    public boolean getVacant(){return  vacant;}
+
+    public void setVacant(boolean vacant){this.vacant=vacant;}
 
     public String getRoomNumber() {
         return roomNumber;
