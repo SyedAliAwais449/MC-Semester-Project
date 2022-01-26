@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
+            android:name=".AdminPanel"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
-        <!--<activity
+        <!--
+<activity
             android:name=".SingUp"
-            android:exported="false" />-->
+            android:exported="false" />
+        -->
         <activity
             android:name=".Home"
             android:exported="false" />
