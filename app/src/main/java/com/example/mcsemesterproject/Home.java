@@ -2,7 +2,6 @@ package com.example.mcsemesterproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,15 +9,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 public class Home extends AppCompatActivity {
 
@@ -88,9 +84,9 @@ public class Home extends AppCompatActivity {
                 Intent intent= new Intent(Home.this, About.class);
                 startActivity(intent);
                 break;
-            case R.id.food:
-//                Intent intent2= new Intent(MainActivity.this, MainActivity2.class);
-//                startActivity(intent2);
+            case R.id.logout:
+                Intent intent2= new Intent(Home.this, Login.class);
+                startActivity(intent2);
                 break;
             default:
 // If we got here, the user's action was not recognized.

@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -91,6 +94,30 @@ public class StandardPackage extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+// Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                Intent intent= new Intent(StandardPackage.this, About.class);
+                startActivity(intent);
+                break;
+            case R.id.logout:
+                Intent intent2= new Intent(StandardPackage.this, Login.class);
+                startActivity(intent2);
+                break;
+            default:
+// If we got here, the user's action was not recognized.
+// Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+        }
+        return false;
+    }
     public void setAdapterFunction(){
         recyclerView = findViewById(R.id.recyclerView);
 

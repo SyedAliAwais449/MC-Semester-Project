@@ -52,7 +52,7 @@ public class SignUp extends AppCompatActivity {
         String emial = inputemail.getText().toString();
         String pass = inputpassword.getText().toString();
         String conf = confirmpass.getText().toString();
-        if (emial.matches(emailPattern)) {
+        if (!emial.matches(emailPattern)) {
             inputemail.setError("enter correct Email");
         } else if (pass.isEmpty()) {
             inputpassword.setError("enter proper password");
