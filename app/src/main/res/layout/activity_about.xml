@@ -7,12 +7,84 @@
     tools:context=".About">
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textView00"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="255dp"
-        android:text="About"
+        android:layout_height="25dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"
+        android:text="Trodden"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView001"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:text="Hotel"
+        android:textColor="#c02c03"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView00"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#dae2ea">
+
+            <TextView
+                android:id="@+id/textView002"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:text="About" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/textView003"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:text="Our Hotel App will provide facility to book Hotel Online. We
+                are providing three categories of Rooms. We are offering Cheap
+prices and High Quality Rooms in this city. Tourists can book luxurious hotels or cheap hotels depending on their budget. " />
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
