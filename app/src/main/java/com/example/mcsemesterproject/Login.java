@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String emial = inputemail.getText().toString();
                 String pass = inputpassword.getText().toString();
-                if (emial.equals("bsef18a455@pucit.edu.pk") && pass.equals("111111"))
+                if (emial.equals("syedali55@gmail.com") && pass.equals("123456"))
                 {
 
                     sendusertoadmin();
@@ -77,7 +77,7 @@ public class Login extends AppCompatActivity {
 
             sendusertoadmin();
         }*/
-        if (emial.matches(emailPattern)) {
+        if (!emial.matches(emailPattern)) {
             inputemail.setError("enter connext Email");
         } else if (pass.isEmpty()) {
             inputpassword.setError("enter proper password");

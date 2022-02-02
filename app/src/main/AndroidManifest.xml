@@ -21,10 +21,10 @@
             android:exported="false" />
         -->
         <activity
-            android:name=".Home"
+            android:name=".AdminPanel"
             android:exported="false" />
         <activity
-            android:name=".AdminPanel"
+            android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".Payment"

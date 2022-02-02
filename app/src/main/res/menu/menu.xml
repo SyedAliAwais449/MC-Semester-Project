@@ -10,13 +10,8 @@
         android:title="About"
         app:showAsAction="never" />
     <item
-        android:id="@+id/stays"
+        android:id="@+id/logout"
         android:onClick="onOptionsItemSelected"
-        android:title="Stays"
-        app:showAsAction="never|ifRoom" />
-    <item
-        android:id="@+id/food"
-        android:title="Food"
-        android:onClick="onOptionsItemSelected"
-        app:showAsAction="ifRoom"/>
+        android:title="Logout"
+        app:showAsAction="ifRoom" />
 </menu>
